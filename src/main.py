@@ -18,4 +18,5 @@ def cloud_function_handler(event, context):
         handler.assign_issue(issue)
 
 if __name__ == "__main__":
-    main() 
+    main()
+    

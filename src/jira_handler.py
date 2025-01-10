@@ -9,7 +9,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler('logs/jira_auto_assign.log', mode='a')
+        logging.FileHandler('jira_auto_assign.log', mode='a')
     ]
 )
 
