@@ -1,0 +1,19 @@
+image: python:3.9-slim
+
+variables:
+  JIRA_SERVER: $JIRA_SERVER
+  JIRA_EMAIL: $JIRA_EMAIL
+  JIRA_API_TOKEN: $JIRA_API_TOKEN
+  ASSIGNEE_EMAIL: $ASSIGNEE_EMAIL
+  PROJECT_KEY: $PROJECT_KEY
+
+stages:
+  - run_assignment
+
+jira_assignment:
+  stage: run_assignment
+  script:
+    - pip install -r requirements.txt
+    - python src/main.py
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" 

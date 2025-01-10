@@ -1,3 +1,4 @@
+import os
 from jira import JIRA
 import logging
 import yaml
@@ -21,7 +22,21 @@ class JiraHandler:
 
     def _load_config(self, config_path):
         with open(config_path, 'r') as file:
-            return yaml.safe_load(file)
+            config = yaml.safe_load(file)
+            
+        # Override with environment variables if available
+        if os.getenv('JIRA_SERVER'):
+            config['jira']['server'] = os.getenv('JIRA_SERVER')
+        if os.getenv('JIRA_EMAIL'):
+            config['jira']['email'] = os.getenv('JIRA_EMAIL')
+        if os.getenv('JIRA_API_TOKEN'):
+            config['jira']['api_token'] = os.getenv('JIRA_API_TOKEN')
+        if os.getenv('ASSIGNEE_EMAIL'):
+            config['assignment']['assignee_email'] = os.getenv('ASSIGNEE_EMAIL')
+        if os.getenv('PROJECT_KEY'):
+            config['assignment']['project_key'] = os.getenv('PROJECT_KEY')
+            
+        return config
 
     def _initialize_jira(self):
         try:
