@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  jira-auto-assign:
+    build: .
+    container_name: jira-auto-assign
+    volumes:
+      - ./config:/NIKE/config
+      - ./logs:/NIKE/logs
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3" 
