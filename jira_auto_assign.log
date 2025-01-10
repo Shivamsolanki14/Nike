@@ -1,0 +1,1 @@
+2025-01-11 00:01:05,917 - ERROR - Failed to initialize JIRA: Invalid URL '${JIRA_SERVER}/rest/api/2/serverInfo': No scheme supplied. Perhaps you meant https://${JIRA_SERVER}/rest/api/2/serverInfo?
