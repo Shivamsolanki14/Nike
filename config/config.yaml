@@ -8,6 +8,4 @@ assignment:
   project_key: ${PROJECT_KEY}
   
 polling:
-  interval_seconds: 30  # How often to check for new tickets 
-
-  # ATATT3xFfGF0P5ci3ynRJRJ6KYTb7tlqv2I1gnC8bcsV-U9pvDvKktpn_IlcYD-wgi_FbjuUQPIaFWhkB6KryQZIm5_YHUfLz9EDjlFCQ6XLMj466NH-5sgAlrXg3yrK0w37aFTX9NQUAw2YPkFyNLWvUFEO576dgQIWsRa2P44-fAh_G4sYa8c=F4A7C0E0
+  interval_seconds: 30  # How often to check for new tickets
