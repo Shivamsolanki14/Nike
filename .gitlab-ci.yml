@@ -1,4 +1,5 @@
 image: python:3.9-slim
+# image: ubuntu:latest
 
 variables:
   JIRA_SERVER: $JIRA_SERVER
